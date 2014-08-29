@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo echo "127.0.0.1" > /etc/4s-cluster
+
 CLUSTERNAME=tb_cluster
 
 4s-cluster-create $CLUSTERNAME
