@@ -2,8 +2,8 @@
 
 CLUSTERNAME=tb_cluster
 
-4s-backend-setup --node 0 --cluster 1 --segments 4 -v $CLUSTERNAME
-4s-backend $CLUSTERNAME
+4s-cluster-create $CLUSTERNAME
+4s-cluster-start $CLUSTERNAME
 
 ps auxw | grep 4s-backen[d]
 
