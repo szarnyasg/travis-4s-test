@@ -4,7 +4,5 @@ before_script:
   - sudo add-apt-repository ppa:yves-raimond/ppa -y
   - sudo apt-get update -q
   - sudo apt-get install -y 4store
-  - 4s-backend-setup my_cluster
-  - 4s-backend my_cluster
 
-script: "ls"
+script: "./run.sh"
