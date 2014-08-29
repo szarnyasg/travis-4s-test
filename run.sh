@@ -19,6 +19,9 @@ ps auxw | grep 4s-backen[d]
 ls -la /var/lib/4store
 ls -la /var/lib/4store/$CLUSTERNAME
 
+sleep 5
+
 4s-import $CLUSTERNAME railway-xform-1.ttl --format turtle --verbose
 4s-query $CLUSTERNAME "SELECT ?x ?y ?z WHERE { ?x ?y ?z }" -f text --verbose | head -n 20
 
+cat /var/log/messages
