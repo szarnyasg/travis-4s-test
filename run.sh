@@ -2,6 +2,9 @@
 
 CLUSTERNAME=my_cluster
 
+# show if IPv6 is diabled
+cat /etc/avahi/avahi-daemon.conf | grep use-ipv6
+
 # shutdown firewall
 sudo iptables -F
 
