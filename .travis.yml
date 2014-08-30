@@ -6,4 +6,4 @@ before_script:
   - sudo apt-get install -y 4store
   - sudo sed -i "s/use-ipv6=yes/use-ipv6=no/" /etc/avahi/avahi-daemon.conf
 
-script: "./run.sh"
+script: "bash -x ./run.sh"
