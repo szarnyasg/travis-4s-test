@@ -23,4 +23,4 @@ sleep 1
 4s-admin start-stores my_repository
 sleep 1
 4s-import -v my_repository railway-xform-1.ttl --format turtle
-4s-query $CLUSTERNAME "SELECT ?x ?y ?z WHERE { ?x ?y ?z }" -f text --verbose | head -n 20
+4s-query my_repository "SELECT ?x ?y ?z WHERE { ?x ?y ?z }" -f text --verbose | head -n 20
