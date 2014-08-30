@@ -8,7 +8,7 @@ sudo touch /etc/4store.conf
 sudo chown $USER:$USER /etc/4store.conf
 echo '[4s-boss]
 discovery = sole
-nodes = localhost
+nodes = 127.0.0.1
 
 [my_repository]
 port = 7890' > /etc/4store.conf
@@ -23,4 +23,4 @@ sleep 1
 4s-admin start-stores my_repository
 sleep 1
 4s-import -v my_repository railway-xform-1.ttl --format turtle
-
+4s-query $CLUSTERNAME "SELECT ?x ?y ?z WHERE { ?x ?y ?z }" -f text --verbose | head -n 20
