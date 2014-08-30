@@ -8,7 +8,7 @@ sudo touch /etc/4store.conf
 sudo chown $USER:$USER /etc/4store.conf
 echo '[4s-boss]
 discovery = sole
-nodes = 127.0.0.1
+nodes = localhost
 
 [my_repository]
 port = 7890' > /etc/4store.conf
