@@ -12,19 +12,19 @@ echo '[4s-boss]
 discovery = sole
 nodes = localhost
 
-[my_cluster]
+[my_repository]
 port = 7890' > /etc/4store.conf
 
 cat /etc/4store.conf
 
-4s-boss --debug
-4s-admin create-store --segments=2 $CLUSTERNAME
-4s-admin list-nodes
+4s-boss
+sleep 1
+4s-admin create-store --segments=2 my_repository
+sleep 1
 4s-admin list-stores
-4s-admin start-stores $CLUSTERNAME
+4s-admin start-stores my_repository
+sleep 1
+4s-import -v my_repository railway-xform-1.ttl --format turtle
+#4s-httpd my_repository
+#4s-query my_repository "SELECT ..."
 
-# import and query
-4s-import $CLUSTERNAME railway-xform-1.ttl --format turtle -v -v 2>&1
-#4s-query $CLUSTERNAME "SELECT ?x ?y ?z WHERE { ?x ?y ?z }" -f text --verbose | head -n 20 2>&1
-
-sudo cat /var/log/syslog
