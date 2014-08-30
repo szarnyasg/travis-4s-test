@@ -24,6 +24,9 @@ ls -la /var/lib/4store/$CLUSTERNAME
 # try connecting with telnet
 # telnet localhost 6734
 
+ps auxw | grep avah[i]
+service avahi-daemon status
+
 #avahi-browse _4store._tcp
 avahi-browse --all --resolve --terminate
 
