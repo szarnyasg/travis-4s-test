@@ -18,7 +18,7 @@ port = 7890' > /etc/4store.conf
 
 cat /etc/4store.conf
 
-4s-boss
+4s-boss --debug
 4s-admin create-store --segments=2 $CLUSTERNAME
 4s-admin list-nodes
 4s-admin list-stores
