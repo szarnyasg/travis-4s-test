@@ -11,16 +11,16 @@ discovery = sole
 nodes = 127.0.0.1
 
 [my_repository]
-port = 7890' > /etc/4store.conf
+port = 7890' > 4store.conf
 
-cat /etc/4store.conf
+cat 4store.conf
 
-4s-boss
+4s-boss --config-file 4store.conf
 sleep 1
-4s-admin create-store --segments=2 my_repository
+4s-admin --config-file 4store.conf create-store --segments=2 my_repository
 sleep 1
-4s-admin list-stores
-4s-admin start-stores my_repository
+4s-admin --config-file 4store.conf list-stores
+4s-admin --config-file 4store.conf start-stores my_repository
 sleep 1
 4s-import -v my_repository railway-xform-1.ttl --format turtle
 4s-query my_repository "SELECT ?x ?y ?z WHERE { ?x ?y ?z }" -f text --verbose | head -n 20
