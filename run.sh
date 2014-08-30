@@ -20,6 +20,8 @@ ls -la /var/lib/4store/$CLUSTERNAME
 4s-import $CLUSTERNAME railway-xform-1.ttl --format turtle -v -v 2>&1
 4s-query $CLUSTERNAME "SELECT ?x ?y ?z WHERE { ?x ?y ?z }" -f text --verbose | head -n 20 2>&1
 
+sudo touch /etc/4store.conf
+
 #ps auxw | grep avah[i]
 #service avahi-daemon status
 
