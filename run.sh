@@ -1,5 +1,12 @@
 #!/bin/bash
 
+netstat -a | grep 8889
+
+avahi-publish -s DudeMaster _ros-master._tcp 8889
+avahi-browse --all --resolve --terminate
+
+exit
+
 CLUSTERNAME=my_cluster
 
 # show if IPv6 is diabled
