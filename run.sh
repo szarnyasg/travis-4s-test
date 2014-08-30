@@ -2,8 +2,16 @@
 
 CLUSTERNAME=my_cluster
 
-# show if IPv6 is diabled
-cat /etc/avahi/avahi-daemon.conf | grep use-ipv6
+sudo touch /etc/4store.conf
+sudo chown $USER:$USER /etc/4store.conf
+echo '[4s-boss]
+discovery = sole
+nodes = localhost
+
+[my_cluster]
+port = 7890' > /etc/4store.conf
+
+cat /etc/4store.conf
 
 4s-boss
 4s-admin create-store --segments=2 $CLUSTERNAME
