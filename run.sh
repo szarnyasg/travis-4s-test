@@ -34,4 +34,4 @@ cat /etc/4store.conf
 #avahi-browse _4store._tcp
 #avahi-browse --all --terminate
 
-#sudo cat /var/log/syslog
+sudo cat /var/log/syslog
