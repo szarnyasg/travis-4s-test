@@ -21,4 +21,4 @@ ls -la /var/lib/4store/$CLUSTERNAME
 4s-import $CLUSTERNAME railway-xform-1.ttl --format turtle --verbose
 4s-query $CLUSTERNAME "SELECT ?x ?y ?z WHERE { ?x ?y ?z }" -f text --verbose | head -n 20
 
-cat /var/log/syslog
+sudo cat /var/log/syslog
