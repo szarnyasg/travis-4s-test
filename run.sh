@@ -22,6 +22,8 @@ ls -la /var/lib/4store/$CLUSTERNAME
 4s-query $CLUSTERNAME "SELECT ?x ?y ?z WHERE { ?x ?y ?z }" -f text --verbose | head -n 20 2>&1
 
 # try connecting with telnet
-telnet localhost 6734
+# telnet localhost 6734
+
+avahi-browse _4store._tcp
 
 sudo cat /var/log/syslog
