@@ -24,6 +24,7 @@ ls -la /var/lib/4store/$CLUSTERNAME
 # try connecting with telnet
 # telnet localhost 6734
 
-avahi-browse _4store._tcp
+#avahi-browse _4store._tcp
+avahi-browse --all
 
 sudo cat /var/log/syslog
